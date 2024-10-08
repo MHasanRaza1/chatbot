@@ -90,7 +90,7 @@ const App = () => {
         }
 
         <div className="bottom w-[100%] flex flex-col items-center">
-          <div className="inputBox w-[75%] flex items-center bg-[#181818] rounded-[30px]">
+          <div className="inputBox w-[90%] md:w-[75%] flex items-center bg-[#181818] rounded-[30px]">
             <input 
             value={message} 
             onChange={(e) => { setMessage(e.target.value) }} 
