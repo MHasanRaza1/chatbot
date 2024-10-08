@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  overflow-x: hidden;
+}
+
+.messages{
+  display: flex;
+  flex-direction: column;
+  /* padding-right: 230px; */
+  padding-top: 30px;
+  /* padding-left: 210px; */
+}
+
+.messages .userMsg{
+  clear: both;
+  background-color: #181818;
+  padding: 15px;
+  border-radius: 30px;
+  max-width: 40vw;
+  min-width: 8vw;
+  align-self: flex-end;
+  text-align: end;
+}
+
+.messages .response{
+  clear: both;
+  background-color: #181818;
+  padding: 15px;
+  border-radius: 30px;
+  max-width: 40vw;
+  min-width: 8vw;
+  align-self: flex-start;
+}
