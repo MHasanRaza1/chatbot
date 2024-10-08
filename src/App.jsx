@@ -51,7 +51,7 @@ const App = () => {
       <div className="w-[100%] min-h-screen overflow-x-hidden bg-[#0E0E0E] text-white flex flex-col justify-center items-center">
         {
           reponse ?
-            <div className='h-[80vh] w-[75%]'>
+            <div className='min-h-[75vh] w-[90%] md:min-h-[80vh] md:w-[75%]'>
               <div className="header pt-[25px] flex items-center justify-between w-[100%] ">
                 <h2 className='text-2xl'>Human Assistant</h2>
                 <button onClick={newChat} id='newChatBtn' className='bg-[#181818] p-[10px] rounded-[30px] cursor-pointer text-[14px] px-[20px]'>New Chat</button>
@@ -66,7 +66,7 @@ const App = () => {
               </div>
             </div>
             :
-            <div className='middle h-[80vh] flex items-center flex-col justify-center'>
+            <div className='min-h-[75vh] middle md:min-h-[80vh] flex items-center flex-col justify-center'>
               <h1 className='text-4xl'>Human Assistant</h1>
               <div className="boxes lg:mt-7 lg:flex lg:items-center lg:gap-4 hidden">
                 <div className="cards w-[200px] h-[120px] cursor-pointer transition-all hover:bg-[#201f1f] rounded-lg px-[20px] relative min-h-[20vh] bg-[#181818] p-[10px]">
@@ -109,7 +109,7 @@ const App = () => {
                 <i className='text-green-500 text-[20px] mr-5 cursor-pointer' onClick={hitRequest}><IoSend /></i>
             }
           </div>
-          <p className='text-[gray] text-[14px] my-4'>Human Assistant is developed by Hasan Raza. This AI application use the gemini API for giving the response.</p>
+          <p className='text-[gray] text-[14px] my-4 w-[90%] text-center'>Human Assistant is developed by Hasan Raza. This AI application use the gemini API for giving the response.</p>
         </div>
       </div>
     </>
