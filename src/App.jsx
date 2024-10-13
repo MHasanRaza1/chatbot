@@ -10,14 +10,16 @@ const App = () => {
   const [message, setMessage] = useState('');
   const [reponse, setResponse] = useState(false);
   const [messages, setMessages] = useState([]);
+  const [loading, setLoading] = useState(false)
 
   const hitRequest = () => {
-    if (message) {
+    if (message && !loading) {
       generateResponse(message);
     }
   }
 
   const generateResponse = async (msg) => {
+    setLoading(true)
     const genAI = new GoogleGenerativeAI('AIzaSyDbaq7ocAIsA_ehBXfHplYm_j7GtY0mcuQ');
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const result = await model.generateContent(msg);
@@ -37,6 +39,7 @@ const App = () => {
           text: result.response.text()
         }
       ])
+    setLoading(false)
     },2000)
     console.log(result.response.text());
   }
@@ -44,7 +47,7 @@ const App = () => {
   const newChat = () => {
     setResponse(false);
     setMessages([]);
-
+    setLoading(false)
   }
   return (
     <>
@@ -105,7 +108,7 @@ const App = () => {
             }}
             />
             {
-              message == '' ? '' :
+              message === '' || loading ? '' :
                 <i className='text-green-500 text-[20px] mr-5 cursor-pointer' onClick={hitRequest}><IoSend /></i>
             }
           </div>
